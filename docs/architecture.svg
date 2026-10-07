@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title description">
+  <title id="title">Incident Replay request path</title>
+  <desc id="description">A request reaches the gateway, crosses HTTP to a recommendation service, queries an in-memory SQLite database, and each step records a span in a shared local trace store.</desc>
+  <rect width="1200" height="420" rx="18" fill="#101820"/>
+  <text x="48" y="58" fill="#85e3cb" font-family="system-ui, sans-serif" font-size="16" letter-spacing="2">REQUEST PATH</text>
+  <text x="48" y="95" fill="#f4f7f8" font-family="system-ui, sans-serif" font-size="28" font-weight="700">One trace across two HTTP services</text>
+  <g font-family="system-ui, sans-serif">
+    <rect x="52" y="145" width="264" height="136" rx="14" fill="#1b2b34" stroke="#3a5660"/>
+    <text x="76" y="184" fill="#85e3cb" font-size="14">01 / ENTRY</text>
+    <text x="76" y="219" fill="#f4f7f8" font-size="23" font-weight="700">API gateway</text>
+    <text x="76" y="248" fill="#b6c8cc" font-size="15">GET /api/run</text>
+    <rect x="468" y="145" width="264" height="136" rx="14" fill="#1b2b34" stroke="#3a5660"/>
+    <text x="492" y="184" fill="#85e3cb" font-size="14">02 / DOWNSTREAM</text>
+    <text x="492" y="219" fill="#f4f7f8" font-size="23" font-weight="700">Recommendations</text>
+    <text x="492" y="248" fill="#b6c8cc" font-size="15">GET /recommendations</text>
+    <rect x="884" y="145" width="264" height="136" rx="14" fill="#1b2b34" stroke="#3a5660"/>
+    <text x="908" y="184" fill="#85e3cb" font-size="14">03 / DATA</text>
+    <text x="908" y="219" fill="#f4f7f8" font-size="23" font-weight="700">SQLite</text>
+    <text x="908" y="248" fill="#b6c8cc" font-size="15">Seeded in-memory table</text>
+    <path d="M316 211 H462 M732 211 H878" stroke="#85e3cb" stroke-width="3"/>
+    <path d="M462 211 l-13 -8 v16 z M878 211 l-13 -8 v16 z" fill="#85e3cb"/>
+    <text x="362" y="191" fill="#b6c8cc" font-size="14">HTTP</text>
+    <text x="783" y="191" fill="#b6c8cc" font-size="14">SQL</text>
+    <path d="M184 281 V326 H600 M600 281 V326 M1016 281 V326 H600" fill="none" stroke="#4b6b74" stroke-width="2" stroke-dasharray="5 6"/>
+    <rect x="430" y="326" width="340" height="54" rx="12" fill="#1c3738" stroke="#438879"/>
+    <text x="600" y="360" text-anchor="middle" fill="#e3f8f1" font-size="17" font-weight="600">In-memory trace store</text>
+  </g>
+</svg>
